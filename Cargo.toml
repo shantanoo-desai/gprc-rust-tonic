@@ -8,6 +8,10 @@ edition = "2018"
 name = "ecomm-server"
 path = "src/server.rs"
 
+[[bin]]
+name = "ecomm-client"
+path = "src/client.rs"
+
 [dependencies]
 tonic = "0.3"
 prost = "0.6"
