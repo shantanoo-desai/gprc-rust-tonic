@@ -12,10 +12,20 @@ use ordermgmt::{Order};
 
 mod ordermgmt;
 
+#[derive(Debug, Default)]
+pub struct MyOrderManagementService {}
+
+#[tonic::async_trait]
+impl OrderManagement for MyOrderManagementService {
+    async fn get_order(&self, _request: Request<String>) -> Result<Response<Order>, Status> {
+        unimplemented!()
+    }
+}
+
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let addr = "[::1]:50051".parse()?;
-    let ecomm_service = OrderManagement::default();
+    let ecomm_service = MyOrderManagementService::default();
 
     println!("Starting gRPC Server....");
     Server::builder()
