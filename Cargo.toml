@@ -5,12 +5,12 @@ authors = ["Shan Desai <shantanoo.desai@gmail.com"]
 edition = "2018"
 
 [[bin]]
-name = "ecomm-server"
-path = "src/server.rs"
+name = "ch01-ecomm-server"
+path = "src/ch01/server.rs"
 
 [[bin]]
-name = "ecomm-client"
-path = "src/client.rs"
+name = "ch01-ecomm-client"
+path = "src/ch01/client.rs"
 
 [dependencies]
 tonic = "0.3"
