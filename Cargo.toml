@@ -4,6 +4,7 @@ version = "0.1.0"
 authors = ["Shan Desai <shantanoo.desai@gmail.com"]
 edition = "2018"
 
+# Chapter 02: Getting Started with gRPC
 [[bin]]
 name = "ch01-ecomm-server"
 path = "src/ch01/server.rs"
@@ -11,6 +12,11 @@ path = "src/ch01/server.rs"
 [[bin]]
 name = "ch01-ecomm-client"
 path = "src/ch01/client.rs"
+
+# Chapter 3: gRPC Communication Patterns
+[[bin]]
+name = "ch02-order-server"
+path = "src/ch02/server.rs"
 
 [dependencies]
 tonic = "0.3"
