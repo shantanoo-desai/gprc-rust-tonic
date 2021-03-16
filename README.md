@@ -10,9 +10,11 @@ Build the ptotocol buffer stub using
 
 Run Server using
 
-    cargo run --bin ecomm-server
+    cargo run --bin chXX/<binary_name>
 
-## grpcurl
+## grpcurl (gRPC Client)
+
+### Installation
 
 Download the binary tarball from [grpcurl](https://github.com/fullstorydev/grpcurl/releases)
 
@@ -25,21 +27,15 @@ $ sudo mv grpcurl /usr/local/bin/
 
 ```
 
-### Testing Server
+### Usage
 
-__addProduct Service__
-
-```bash
-grpcurl -plaintext -import-path ./api/v1/protos/ \
-> -proto productinfo.proto \
-> -d '{id: "1", "name": "ProductA", "description": "Amazing Product"}' \
-> [::]:50051 ecommerce.ProductInfo/addProduct 
-```
-
-__getProduct Service__
+General Syntax for `grpcurl`:
 
 ```bash
-grpcurl -plaintext -import-path ./api/v1/protos/ -proto productinfo.proto -d '{"value": "f69bf181-fb13-45ed-bdae-a6f9811d1a9a" }' [::]:50051 ecommerce.ProductInfo/getProduct
+grpcurl -plaintext -import-path ./api/<version_chapter_number>/protos/ \
+> -proto <proto_file_name>.proto \
+> -d '<REQUEST_PAYLOAD_HERE>' \
+> [::]:50051 <protobuf_package_name>.<ServiceName>/<ParticularService> 
 ```
 
 ## Resources / Reference
