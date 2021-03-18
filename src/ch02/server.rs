@@ -17,8 +17,17 @@ pub struct MyOrderManagementService {}
 
 #[tonic::async_trait]
 impl OrderManagement for MyOrderManagementService {
-    async fn get_order(&self, _request: Request<String>) -> Result<Response<Order>, Status> {
-        unimplemented!()
+    async fn get_order(&self, request: Request<String>) -> Result<Response<Order>, Status> {
+        println!("{:?}", request.into_inner());
+        Ok(Response::new(
+            Order {
+                id: "21".into(),
+                items: vec!["Test".into()],
+                description: "Test".into(),
+                price: 12.00,
+                destination: "HOme".into()
+            }
+        ))
     }
 }
 
